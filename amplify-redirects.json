@@ -1,0 +1,92 @@
+[
+  {
+    "source": "/inspiration-node",
+    "target": "/inspiration.html",
+    "status": "301"
+  },
+  {
+    "source": "/icyn",
+    "target": "https://icyn.prismcortex.net",
+    "status": "301"
+  },
+  {
+    "source": "/chooselove",
+    "target": "/music.html",
+    "status": "301"
+  },
+  {
+    "source": "/music-node",
+    "target": "/music.html",
+    "status": "301"
+  },
+  {
+    "source": "/games",
+    "target": "/games.html",
+    "status": "301"
+  },
+  {
+    "source": "/videos",
+    "target": "/videos.html",
+    "status": "301"
+  },
+  {
+    "source": "/minefind",
+    "target": "/games.html",
+    "status": "301"
+  },
+  {
+    "source": "/soccerblocker",
+    "target": "/games.html",
+    "status": "301"
+  },
+  {
+    "source": "/d20onthemoney",
+    "target": "/behind-the-brain.html",
+    "status": "301"
+  },
+  {
+    "source": "/4est",
+    "target": "/behind-the-brain.html",
+    "status": "301"
+  },
+  {
+    "source": "/thotbot",
+    "target": "/inspiration.html",
+    "status": "301"
+  },
+  {
+    "source": "/donate",
+    "target": "/behind-the-brain.html",
+    "status": "301"
+  },
+  {
+    "source": "/pos",
+    "target": "/pos.html",
+    "status": "301"
+  },
+  {
+    "source": "/s/stories/<*>",
+    "target": "/lightbringer.html",
+    "status": "301"
+  },
+  {
+    "source": "/s/shop",
+    "target": "/games.html",
+    "status": "301"
+  },
+  {
+    "source": "/shop/<*>",
+    "target": "/games.html",
+    "status": "301"
+  },
+  {
+    "source": "/product/<*>",
+    "target": "/games.html",
+    "status": "301"
+  },
+  {
+    "source": "/<*>",
+    "target": "/404.html",
+    "status": "404-200"
+  }
+]
