@@ -287,6 +287,8 @@ f'''
 ''')
 
 # ---------------- MUSIC ----------------
+BBG_SONGS=[("bbg-bearded-board-games","Bearded Board Games"),("bbg-everybody-loves-games","Everybody Loves Games"),("bbg-my-games","My Games")]
+BBG_SONG_CARDS="".join(f'<div class="card"><h3>{t}</h3>{vid(n,t,True)}</div>' for n,t in BBG_SONGS)
 songs = [
  ("zofZiOmZw18","Choose Love","The heart of Prism Cortex. Choose Love."),
  ("E_wMmvCAAPA","My New Favorite Color","With POSTCARD."),
@@ -317,10 +319,8 @@ f'''
 </div></section>
 <section class="alt"><div class="wrap">
 <h2>Board game parody songs</h2>
-<p class="muted">Songs about the games we love. <!-- TODO: add parody song titles + YouTube links --></p>
-<div class="card"><h3>Board game music?</h3><p>Combining my 2 favorite things, music and gaming.</p>
-<video controls style="width:100%;border-radius:12px" src="https://customer-ugajlzvkncemhxjh.cloudflarestream.com/abab3b5b0d9ae6782cf1544283d5dcc3/manifest/video.m3u8"></video>
-<p class="muted" style="font-size:.85rem;margin-top:8px">Tip: upload this video to YouTube so it plays in every browser.</p></div>
+<p class="muted">Combining my 2 favorite things, music and gaming. Made with <a href="https://beardedboardgames.com">Bearded Board Games</a>.</p>
+<div class="grid shorts">{BBG_SONG_CARDS}</div>
 </div></section>
 <section><div class="wrap">
 <h2>Songs</h2>
@@ -367,23 +367,49 @@ page("pos.html","POS Node | Prism Cortex Solutions",
 open(__file__.rsplit("/",1)[0]+"/pos_body.html").read(), head=POS_HEAD)
 
 # ---------------- VIDEO NODE ----------------
-VIDS=[("RUon07ukD30","Learn to play I Crit You Not!","Lettuce Talk Games deep-dive tutorial"),("03IveFrhfCw","I Crit You Not! Lucklympics Edition",""),
-("Q3j1k2lna8A","I Crit You Not! on Lettuce Talk Games",""),("bhRmHTEea-A","D-20 On The Money trailer",""),("BAYIJh4qq9Y","Gift for Gamers",""),
-("zofZiOmZw18","Choose Love","Music video"),("hfhg6tk0M0g","Cosmic Meditation","10 minutes · more on the <a href=inspiration.html>Inspiration page</a>")]
+def ytlist(lid, title):
+    return f'<iframe loading="lazy" style="aspect-ratio:16/9;width:100%;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/videoseries?list={lid}" title="{title}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>'
+PL_ICYN="PL_RniOZRasa8eP5U1riK9rzZtVjQJqloC"; PL_LTG="PL_RniOZRasa_LUIWM2w8gtiUOh2oFE4J_"
+VIDS=[("bhRmHTEea-A","D-20 On The Money trailer",""),("BAYIJh4qq9Y","Gift for Gamers",""),("zofZiOmZw18","Choose Love","Music video")]
 vrows="".join(f'<div class="card"><h3>{t}</h3>{"<p>"+d+"</p>" if d else ""}{yt(v,t)}</div>' for v,t,d in VIDS)
 page("videos.html","Video Node | Prism Cortex Solutions",
-"Tutorials, trailers, music videos and meditations from Prism Cortex.",
+"Board game songs, I Crit You Not! videos, Lettuce Talk Games tutorials, trailers, music videos and meditations from Prism Cortex.",
 f"""
 <section class="hero"><div class="wrap">
 <span class="eyebrow">Video Node</span>
 <h1>Watch the <span class="grad">brain at work</span></h1>
-<p class="lead">Learn-to-play tutorials, trailers, music videos and meditations.</p>
+<p class="lead">Board game songs, learn-to-play tutorials, trailers, music videos and meditations.</p>
+<div class="btns"><a class="btn" href="#bbg-songs">Board game songs</a><a class="btn" href="#icyn">I Crit You Not!</a><a class="btn" href="#ltg">Lettuce Talk Games</a></div>
 </div></section>
-<section class="alt"><div class="wrap feature">
+
+<section class="alt" id="bbg-songs"><div class="wrap">
+<span class="eyebrow">Bearded Board Games</span>
+<h2>Board game parody songs</h2>
+<p class="muted">N8 on bass, singing about board games. Find the games at <a href="https://beardedboardgames.com">beardedboardgames.com</a>.</p>
+<div class="grid shorts">{BBG_SONG_CARDS}</div>
+</div></section>
+
+<section id="icyn"><div class="wrap feature">
+<div>{ytlist(PL_ICYN,"I Crit You Not! videos")}</div>
+<div><span class="eyebrow">Playlist</span><h2>I Crit You Not!</h2><p class="muted">Trailers, tutorials and the Lucklympics Edition. Then go roll some dice.</p>
+<div class="btns"><a class="btn primary" href="{ICYN_PLAY}">Play I Crit You Not!</a><a class="btn" href="https://youtube.com/playlist?list={PL_ICYN}">Open on YouTube</a></div></div>
+</div></section>
+
+<section class="alt" id="ltg"><div class="wrap feature">
+<div><span class="eyebrow">Playlist</span><h2>Lettuce Talk Games</h2><p class="muted">Deep-dive tutorials and game talk with Lettuce Talk Games.</p>
+<div class="btns"><a class="btn" href="https://youtube.com/playlist?list={PL_LTG}">Open on YouTube</a></div></div>
+<div>{ytlist(PL_LTG,"Lettuce Talk Games videos")}</div>
+</div></section>
+
+<section><div class="wrap feature">
 <div><video controls playsinline preload="metadata" poster="media/choose-love-poster.jpg" style="width:100%;max-width:400px;border-radius:var(--r);display:block;margin:0 auto" src="media/choose-love.mp4"></video></div>
-<div><span class="eyebrow">New</span><h2>Choose Love, with lyrics</h2><p class="muted">The captioned version of our anthem.</p></div>
+<div><span class="eyebrow">Music</span><h2>Choose Love, with lyrics</h2><p class="muted">The captioned version of our anthem. More songs on the <a href="music.html">Music Node</a>.</p></div>
 </div></section>
-<section><div class="wrap"><div class="grid">{vrows}</div></div></section>
+
+<section class="alt"><div class="wrap">
+<h2>More videos</h2>
+<div class="grid">{vrows}<div class="card"><h3>Cosmic Meditation</h3><p>10 minutes · more on the <a href="inspiration.html">Inspiration page</a></p>{vid("cosmic-meditation","Cosmic Meditation, 10 minutes")}</div></div>
+</div></section>
 """)
 
 # ---------------- INSPIRATION ----------------
