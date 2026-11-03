@@ -290,17 +290,13 @@ f'''
 BBG_SONGS=[("bbg-bearded-board-games","Bearded Board Games"),("bbg-everybody-loves-games","Everybody Loves Games"),("bbg-my-games","My Games")]
 BBG_SONG_CARDS="".join(f'<div class="card"><h3>{t}</h3>{vid(n,t,True)}</div>' for n,t in BBG_SONGS)
 songs = [
- ("zofZiOmZw18","Choose Love","The heart of Prism Cortex. Choose Love."),
- ("E_wMmvCAAPA","My New Favorite Color","With POSTCARD."),
  ("3OhY0q5Mrtc","Savior Dreams","Music, lyrics and vocals by Nate Sloan. Performed and recorded by POSTCARD."),
  ("svt7yAM3WMc","The Mourning of Glory","Music, lyrics and vocals by Nate Sloan. Performed and recorded by POSTCARD."),
- ("WnqBvopaF5s","Snow","Inspired by Game of Thrones. Winter is coming."),
 ]
-LOCAL_SONGS={"3OhY0q5Mrtc":"savior-dreams","svt7yAM3WMc":"mourning-of-glory","WnqBvopaF5s":"snow"}
+LOCAL_SONGS={"3OhY0q5Mrtc":"savior-dreams","svt7yAM3WMc":"mourning-of-glory"}
 def _song(v,t,d):
     if v in LOCAL_SONGS:
-        extra = ' <a href="https://www.youtube.com/watch?v=WnqBvopaF5s">Hear the full song on YouTube</a>.' if v=="WnqBvopaF5s" else ""
-        return f'<div class="card"><h3>{t}</h3>{"<p>"+d+extra+"</p>" if (d or extra) else ""}{vid(LOCAL_SONGS[v],t)}</div>'
+        return f'<div class="card"><h3>{t}</h3>{"<p>"+d+"</p>" if d else ""}{vid(LOCAL_SONGS[v],t)}</div>'
     return f'<div class="card"><h3>{t}</h3>{"<p>"+d+"</p>" if d else ""}{yt(v,t)}</div>'
 srows = "".join(_song(v,t,d) for v,t,d in songs)
 page("music.html","Music Node | Prism Cortex Solutions",
@@ -324,6 +320,12 @@ f'''
 <section><div class="wrap">
 <h2>Songs</h2>
 <div class="grid">{srows}</div>
+</div></section>
+<section class="alt" id="postcard"><div class="wrap">
+<span class="eyebrow">The band</span>
+<h2>POSTCARD</h2>
+<p class="lead">POSTCARD is the band that performed and recorded my songs, including Savior Dreams and The Mourning of Glory. Their channel has the band&rsquo;s history and more music.</p>
+<div class="btns"><a class="btn primary" href="https://www.youtube.com/@postcardbandhistory">Visit POSTCARD on YouTube</a></div>
 </div></section>
 ''')
 
@@ -369,8 +371,6 @@ open(__file__.rsplit("/",1)[0]+"/pos_body.html").read(), head=POS_HEAD)
 def ytlist(lid, title):
     return f'<iframe loading="lazy" style="aspect-ratio:16/9;width:100%;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/videoseries?list={lid}" title="{title}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>'
 PL_ICYN="PL_RniOZRasa8eP5U1riK9rzZtVjQJqloC"; PL_LTG="PL_RniOZRasa_LUIWM2w8gtiUOh2oFE4J_"
-VIDS=[("bhRmHTEea-A","D-20 On The Money trailer",""),("BAYIJh4qq9Y","Gift for Gamers",""),("zofZiOmZw18","Choose Love","Music video")]
-vrows="".join(f'<div class="card"><h3>{t}</h3>{"<p>"+d+"</p>" if d else ""}{yt(v,t)}</div>' for v,t,d in VIDS)
 page("videos.html","Video Node | Prism Cortex Solutions",
 "Board game songs, I Crit You Not! videos, Lettuce Talk Games tutorials, trailers, music videos and meditations from Prism Cortex.",
 f"""
@@ -406,8 +406,8 @@ f"""
 </div></section>
 
 <section class="alt"><div class="wrap">
-<h2>More videos</h2>
-<div class="grid">{vrows}<div class="card"><h3>Cosmic Meditation</h3><p>10 minutes · more on the <a href="inspiration.html">Inspiration page</a></p>{vid("cosmic-meditation","Cosmic Meditation, 10 minutes")}</div></div>
+<h2>Guided meditation</h2>
+<div class="grid"><div class="card"><h3>Cosmic Meditation</h3><p>10 minutes · more on the <a href="inspiration.html">Inspiration page</a></p>{vid("cosmic-meditation","Cosmic Meditation, 10 minutes")}</div></div>
 </div></section>
 """)
 
@@ -465,7 +465,7 @@ f"""
 <div>
 <span class="eyebrow">The music</span>
 <h2>A guitar with my name on it</h2>
-<p>Music is where the brain lights up first. I write and record my own songs, from our anthem <strong>Choose Love</strong> to <em>My New Favorite Color</em> (with POSTCARD), <em>Savior Dreams</em>, <em>The Mourning of Glory</em> and <em>Snow</em>.</p>
+<p>Music is where the brain lights up first. I write and record my own songs, from our anthem <strong>Choose Love</strong> to <em>Savior Dreams</em> and <em>The Mourning of Glory</em>, recorded with my band POSTCARD.</p>
 <p>Then there are the board game songs, which combine my two favorite things, music and gaming. If a game makes me smile, it&rsquo;s probably getting a song.</p>
 <div class="btns"><a class="btn primary" href="music.html">Listen on the Music Node</a><a class="btn" href="https://www.youtube.com/n8ofbase">YouTube</a></div>
 </div>
