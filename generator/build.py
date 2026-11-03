@@ -246,12 +246,12 @@ root.addEventListener('change',render);render();
 
 # ---------------- GAMES ----------------
 games = [
- ("Fences","Out now","Our flagship tile-and-fence game, with The Ranch, Seasons, a 5–6 player expansion and Premium Print &amp; Play.","https://beardedboardgames.com/fences"),
- ("Locked Out","Out now","Quick to teach, hard to put down.","https://beardedboardgames.com/locked-out"),
- ("Pack Lash","Coming soon","Part of the Bearded Bundle for the 2026 holiday season. Reserve a VIP spot.","https://beardedboardgames.com/pack-lash"),
- ("Mine &amp; Find","Coming soon","Dig in and find the treasure.","https://beardedboardgames.com/mine-find"),
- ("Soccer Blocker","Coming soon","Soccer on a tabletop. Version Zero limited edition already exists.","https://beardedboardgames.com/soccer-blocker"),
- ("Fences: The Roll &amp; Write","Coming 2027","Fences reimagined as a roll &amp; write.","https://beardedboardgames.com/fences-the-roll-write"),
+ ("Fences","Out now","Farmers compete to build fields for their animals. Lay tiles to grow your farms and collect your animals. Earn points for each animal you own, and also for completing farms you don&rsquo;t own. Each tile expands your farm but also your neighbors&rsquo;, so play strategically. Every player has a unique farmer profile that changes how they score, so every game is different!","https://beardedboardgames.com/fences"),
+ ("Locked Out","Out now","It is the year 2368. You and your gang of criminals stole a spacecraft full of loot, but the ship&rsquo;s computer locked you out. Use tools to reach new areas and take back control before your resources run out, and watch out for greedy crewmates who might steal them. Escape together while grabbing as much loot as you can. If the gang fails to escape, the player with the least money wins. Winner of The Game Crafter&rsquo;s competition sponsored by Eat Lunch and Board Game and Bearded Board Games.","https://beardedboardgames.com/locked-out"),
+ ("Pack Lash","Coming soon","A fast-paced, head-to-head, asymmetric card game with variable player winning conditions. Try to achieve your victory condition while preventing your opponent from achieving theirs. Designed by Craig Hughes with art by Hailey Fetting.","https://beardedboardgames.com/pack-lash"),
+ ("Mine &amp; Find","Coming soon","A quick and easy card game for all ages. Search the mine for your color and shape, and find carts to help you get through the mine quicker. Be the first to find all your gems to win!","https://beardedboardgames.com/mine-find"),
+ ("Soccer Blocker","Coming soon","A 1 v 1 soccer duel. Out-guess, out-think and out-maneuver your opponent to work the ball down the field and take a shot on goal. First player to score three points in this fast-paced game wins!","https://beardedboardgames.com/soccer-blocker"),
+ ("Fences: The Roll &amp; Write","Coming 2027","A new game in the Fences universe! Roll the dice, draft one and mark your sheet. Plan your farm by grouping outcomes in specific ways. From designers Darren Reckner and Jason Hager of Durdle Games.","https://beardedboardgames.com/fences-the-roll-write"),
 ]
 IMG={"Fences":"game-fences.jpg","Locked Out":"game-locked-out.jpg","Pack Lash":"game-pack-lash.jpg","Mine &amp; Find":"game-mine-find.jpg","Soccer Blocker":"game-soccer-blocker.jpg"}
 cards = "".join(f'<div class="card">{"<img class=cover src=img/"+IMG[n]+" alt=\""+n+" cover\" loading=lazy>" if n in IMG else ""}<span class="tag{"" if s=="Out now" else " soon"}">{s}</span><h3>{n}</h3><p>{d}</p><a class="more" href="{u}">Details →</a></div>' for n,s,d,u in games)
