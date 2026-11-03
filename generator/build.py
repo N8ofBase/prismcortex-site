@@ -32,8 +32,7 @@ def node_graph():
     out.append('</svg>')
     return "".join(out)
 
-COVERS=[("icyn-logo.png","I Crit You Not!"),("game-fences.jpg","Fences"),("game-locked-out.jpg","Locked Out"),("game-pack-lash.jpg","Pack Lash"),("game-mine-find.jpg","Mine &amp; Find"),("game-soccer-blocker.jpg","Soccer Blocker"),("bbg-meeple.png","Bearded Board Games")]
-BANNER='<section class="banner"><div class="banner-photo"><img src="img/n8-banner.jpg" alt="N8 grinning with his N8 guitar in a workshop full of instruments"><span class="hi">Hi, I&rsquo;m N8. Let&rsquo;s play.</span></div><div class="banner-logos">'+"".join(f'<img src="img/{f}" alt="{a}" loading="lazy">' for f,a in COVERS)+'</div></section>'
+BANNER='<section class="banner"><div class="banner-photo"><img src="img/n8-banner.jpg" alt="N8 grinning with his N8 guitar, waving, in front of glowing Cortex nodes and faint game art from I Crit You Not! and Bearded Board Games"><span class="hi">Hi, I&rsquo;m N8. Let&rsquo;s play.</span></div></section>'
 
 def page(fname, title, desc, body, head=""):
     nav = "".join(f'<a href="{h}"{" aria-current=page" if h==fname else ""}>{t}</a>' for h,t in NAV)
