@@ -143,3 +143,4 @@ footer.site a{color:var(--muted)}
 .beta-pill-dark{display:inline-block;font-weight:800;font-size:.8rem;letter-spacing:.14em;padding:6px 12px;border-radius:999px;background:var(--p4);color:#0b0b12;margin-bottom:14px}
 .beta-line{border-left:3px solid var(--p4);padding-left:12px;color:var(--muted);max-width:640px}
 .story{max-width:720px}.story p{color:var(--ink);opacity:.9;font-size:1.05rem;line-height:1.75}
+@media(max-width:700px){.hero{padding:48px 0 56px}.banner-photo .hi{position:static;display:block;width:max-content;max-width:calc(100% - 32px);margin:-14px auto 0;transform:rotate(-2deg);font-size:1.25rem}.banner{padding-bottom:20px;background:transparent}.banner-photo{overflow:visible}.banner-photo img{display:block}}
