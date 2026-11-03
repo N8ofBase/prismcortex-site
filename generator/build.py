@@ -128,7 +128,7 @@ f'''
 
 <section><div class="wrap">
 <p class="quote">“Combining my 2 favorite things, music and gaming.”</p>
-<p class="muted">Curious where all of this came from? The original Prism Cortex, with its games, stories, meditations and merch, lives on in <a href="behind-the-brain.html">Behind the Brain</a>.</p>
+<p class="muted">Who&rsquo;s behind the brain? Meet N8, the musician, game designer and dreamer who runs Prism Cortex, in <a href="behind-the-brain.html">Behind the Brain</a>.</p>
 </div></section>
 ''')
 
@@ -327,7 +327,8 @@ products = """<ul class="ticks">
 <li>Soccer Blocker Version Zero Limited Edition $30 · Mine Find $20 · Locked Out $20 · Jibe Card Game $10 · Pickleball $30</li>
 <li>Pack Lash VIP Reservation $1</li><li>Project Lightbringer Mission 1: The Universe Medallion $5</li>
 <li>Donation $2–100</li></ul>"""
-page("behind-the-brain.html","Behind the Brain | Prism Cortex Solutions",
+# Old-site archive, hidden for now: still generated, but not linked or indexed.
+page("archive.html","Behind the Brain Archive | Prism Cortex Solutions",
 "The original Prism Cortex: board games with dice-rolling action, Project Lightbringer stories, inspiration, meditations, videos and merch.",
 f'''
 <section class="hero"><div class="wrap">
@@ -347,7 +348,7 @@ f'''
 {sec("The original shop", products)}
 {sec("Support Prism Cortex", '<p>Donations of $2–100 kept the lights on and the dice rolling. Thank you! <a href="contact.html">Get in touch</a> to support the work.</p>')}
 </div></section>
-''')
+''', head='<meta name="robots" content="noindex">')
 
 # ---------------- POS NODE ----------------
 POS_HEAD = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;700&display=swap"><link rel="stylesheet" href="pos.css">'
@@ -407,6 +408,48 @@ f"""
 </div></section>
 """)
 
+# ---------------- BEHIND THE BRAIN (about N8) ----------------
+page("behind-the-brain.html","Behind the Brain | Prism Cortex Solutions",
+"Meet N8, the musician, game designer and builder behind Prism Cortex Solutions: Choose Love, board game songs, meditation and the inspiration behind it all.",
+f"""
+<section class="hero"><div class="wrap">
+<span class="eyebrow">Behind the Brain</span>
+<h1>Music first. <span class="grad">Love always.</span></h1>
+<p class="lead">Hi, I&rsquo;m N8 (Nate Sloan). I write songs, design board games and build software in St. Louis, and all of it comes from the same place: a love of music, play and the people I get to share them with.</p>
+</div></section>
+<section class="banner"><div class="banner-photo"><img src="img/n8-banner.jpg" alt="N8 grinning with his N8 guitar, waving, in front of glowing Cortex nodes"></div></section>
+
+<section><div class="wrap feature">
+<div>
+<span class="eyebrow">The music</span>
+<h2>A guitar with my name on it</h2>
+<p>Music is where the brain lights up first. I write and record my own songs, from our anthem <strong>Choose Love</strong> to <em>My New Favorite Color</em> (with POSTCARD), <em>Savior Dreams</em>, <em>The Mourning of Glory</em>, <em>Snow</em> and <em>N8&rsquo;s Blue Christmas</em>.</p>
+<p>Then there are the board game songs, which combine my two favorite things, music and gaming. If a game makes me smile, it&rsquo;s probably getting a song.</p>
+<div class="btns"><a class="btn primary" href="music.html">Listen on the Music Node</a><a class="btn" href="https://www.youtube.com/n8ofbase">YouTube</a></div>
+</div>
+<div><video controls playsinline preload="metadata" poster="media/choose-love-poster.jpg" style="width:100%;max-width:360px;border-radius:var(--r);display:block;margin:0 auto" src="media/choose-love.mp4"></video></div>
+</div></section>
+
+<section class="alt"><div class="wrap feature">
+<div><img src="img/choose-love.jpg" alt="Choose Love: a rainbow brain flowing into a rainbow heart" style="border-radius:var(--r)"></div>
+<div>
+<span class="eyebrow">The inspiration</span>
+<h2>Choose Love, and you&rsquo;ll never lose</h2>
+<p>I&rsquo;ve practiced meditation, energy work and spiritual study for most of my life, and The Urantia Book shapes a lot of how I see the universe. That&rsquo;s where ThotBot and the Thought Adjuster came from, and it&rsquo;s why the Project Lightbringer stories are about love and light.</p>
+<p class="muted">All my writings, games and designs are based in love. Thank you for joining me on this creative expedition.</p>
+<div class="btns"><a class="btn" href="inspiration.html">Meditations &amp; ThotBot</a><a class="btn" href="lightbringer.html">Read Project Lightbringer</a></div>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<span class="eyebrow">What I do now</span>
+<h2>One brain, many nodes</h2>
+<p class="lead">Prism Cortex Solutions is where it all plugs in. I design and release board games with my friends Adam Collins and Tim Forbis at <a href="https://beardedboardgames.com">Bearded Board Games</a>, make the online game <a href="{ICYN_PLAY}">I Crit You Not!</a>, and build websites and point-of-sale systems for small businesses.</p>
+<p class="quote">&ldquo;Combining my 2 favorite things, music and gaming.&rdquo;</p>
+<div class="btns"><a class="btn primary" href="contact.html">Say hi</a><a class="btn" href="games.html">Game Node</a></div>
+</div></section>
+""")
+
 # ---------------- LIGHTBRINGER STORIES ----------------
 import html as _h
 def _story(fn):
@@ -416,7 +459,7 @@ page("lightbringer.html","Project Lightbringer | Prism Cortex Solutions",
 "Project Lightbringer: the Prism Cortex story universe. Read the prologue, Terror on Talus, and Project Lightbringer.",
 f"""
 <section class="hero"><div class="wrap">
-<span class="eyebrow">Behind the Brain · Stories</span>
+<span class="eyebrow">Stories</span>
 <h1>Project <span class="grad">Lightbringer</span></h1>
 <p class="lead">A story of love, light and the Universe Medallion, set on the planet Talus.</p>
 <div class="btns"><a class="btn" href="#talus">Prologue: Terror on Talus</a><a class="btn" href="#lightbringer">Project Lightbringer</a><a class="btn" href="behind-the-brain.html">Back to Behind the Brain</a></div>
@@ -427,7 +470,7 @@ f"""
 
 page("404.html","Page not found | Prism Cortex Solutions","That page moved or never existed.",
 """<section class="hero"><div class="wrap"><span class="eyebrow">404</span><h1>That node <span class="grad">isn&rsquo;t connected</span></h1>
-<p class="lead">The page you wanted moved when Prism Cortex became Prism Cortex Solutions. Everything from the old site lives in Behind the Brain.</p>
+<p class="lead">The page you wanted moved when Prism Cortex became Prism Cortex Solutions. Try the home page, or meet N8 in Behind the Brain.</p>
 <div class="btns"><a class="btn primary" href="/">Go home</a><a class="btn" href="/behind-the-brain.html">Behind the Brain</a></div></div></section>""")
 
 # ---------------- CONTACT ----------------

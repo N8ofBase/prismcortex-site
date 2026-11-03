@@ -41,7 +41,7 @@
   },
   {
     "source": "/d20onthemoney",
-    "target": "/behind-the-brain.html",
+    "target": "/games.html",
     "status": "301"
   },
   {
@@ -56,7 +56,7 @@
   },
   {
     "source": "/donate",
-    "target": "/behind-the-brain.html",
+    "target": "/contact.html",
     "status": "301"
   },
   {
