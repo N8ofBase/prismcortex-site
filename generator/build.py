@@ -6,6 +6,10 @@ NAV = [("index.html","Home"),("games.html","Game Node"),("pos.html","POS Node (B
 def yt(vid, title):
     return f'<iframe loading="lazy" style="aspect-ratio:16/9;width:100%;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/{vid}" title="{title}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>'
 
+def vid(name, title, vertical=False):
+    mw = "max-width:300px;margin:0 auto;" if vertical else ""
+    return f'<video controls playsinline preload="none" poster="media/{name}.jpg" style="width:100%;{mw}display:block;border-radius:12px;aspect-ratio:{"9/16" if vertical else "16/9"};background:#000" src="media/{name}.mp4" title="{title}"></video>'
+
 ICYN_PLAY = "https://icyn.prismcortex.net"
 EMAIL = "n8gr8@prismcortex.net"
 _defs,_paths = open(__file__.rsplit("/",1)[0]+"/brain_paths.txt").read().split("|||")
@@ -286,12 +290,18 @@ f'''
 songs = [
  ("zofZiOmZw18","Choose Love","The heart of Prism Cortex. Choose Love."),
  ("E_wMmvCAAPA","My New Favorite Color","With POSTCARD."),
- ("3OhY0q5Mrtc","Savior Dreams",""),
- ("svt7yAM3WMc","The Mourning of Glory",""),
- ("WnqBvopaF5s","Snow","Inspired by Game of Thrones."),
+ ("3OhY0q5Mrtc","Savior Dreams","Music, lyrics and vocals by Nate Sloan. Performed and recorded by POSTCARD."),
+ ("svt7yAM3WMc","The Mourning of Glory","Music, lyrics and vocals by Nate Sloan. Performed and recorded by POSTCARD."),
+ ("WnqBvopaF5s","Snow","Inspired by Game of Thrones. Winter is coming."),
  ("JRUbnQxDSbw","N8's Blue Christmas",""),
 ]
-srows = "".join(f'<div class="card"><h3>{t}</h3>{"<p>"+d+"</p>" if d else ""}{yt(v,t)}</div>' for v,t,d in songs)
+LOCAL_SONGS={"3OhY0q5Mrtc":"savior-dreams","svt7yAM3WMc":"mourning-of-glory","WnqBvopaF5s":"snow"}
+def _song(v,t,d):
+    if v in LOCAL_SONGS:
+        extra = ' <a href="https://www.youtube.com/watch?v=WnqBvopaF5s">Hear the full song on YouTube</a>.' if v=="WnqBvopaF5s" else ""
+        return f'<div class="card"><h3>{t}</h3>{"<p>"+d+extra+"</p>" if (d or extra) else ""}{vid(LOCAL_SONGS[v],t)}</div>'
+    return f'<div class="card"><h3>{t}</h3>{"<p>"+d+"</p>" if d else ""}{yt(v,t)}</div>'
+srows = "".join(_song(v,t,d) for v,t,d in songs)
 page("music.html","Music Node | Prism Cortex Solutions",
 "Choose Love and board game parody songs from Prism Cortex.",
 f'''
@@ -399,9 +409,16 @@ f"""
 </div></section>
 
 <section><div class="wrap">
+<span class="eyebrow">ThotBot speaks</span>
+<h2>Short thoughts for a better day</h2>
+<p class="muted">Under a minute each. ThotBot on the things that matter.</p>
+<div class="grid shorts"><div class="card"><h3>On Creating</h3>{vid("thotbot-creating","ThotBot On Creating",True)}</div><div class="card"><h3>On Responsibility</h3>{vid("thotbot-responsibility","ThotBot On Responsibility",True)}</div><div class="card"><h3>On Joy</h3>{vid("thotbot-joy","ThotBot On Joy",True)}</div><div class="card"><h3>On Patience</h3>{vid("thotbot-patience","ThotBot On Patience",True)}</div><div class="card"><h3>On Integrity</h3>{vid("thotbot-integrity","ThotBot On Integrity",True)}</div><div class="card"><h3>On Being Generous</h3>{vid("thotbot-generous","ThotBot On Being Generous",True)}</div><div class="card"><h3>On Ethics</h3>{vid("thotbot-ethics","ThotBot On Ethics",True)}</div><div class="card"><h3>On Gratitude</h3>{vid("thotbot-gratitude","ThotBot On Gratitude",True)}</div></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
 <h2>Guided meditations</h2>
 <div class="grid">
- <div class="card"><h3>Cosmic Meditation</h3><p>ThotBot and I created this 10-minute guided meditation to help connect to our true selves. Enjoy, and spread the love.</p>{yt("hfhg6tk0M0g","Cosmic Meditation 10 Minutes")}</div>
+ <div class="card"><h3>Cosmic Meditation</h3><p>ThotBot and I created this 10-minute guided meditation to help connect to our true selves. Enjoy, and spread the love.</p>{vid("cosmic-meditation","Cosmic Meditation, 10 minutes")}</div>
  <div class="card"><h3>Choose Love</h3><p>Our anthem, with the lyrics on screen.</p><video controls playsinline preload="metadata" poster="media/choose-love-poster.jpg" style="width:100%;max-width:320px;border-radius:12px;display:block;margin:0 auto" src="media/choose-love.mp4"></video></div>
 </div>
 <p class="muted" style="margin-top:20px">More uplifting clips on <a href="https://www.youtube.com/n8ofbase">YouTube</a>.</p>

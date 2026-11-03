@@ -144,3 +144,4 @@ footer.site a{color:var(--muted)}
 .beta-line{border-left:3px solid var(--p4);padding-left:12px;color:var(--muted);max-width:640px}
 .story{max-width:720px}.story p{color:var(--ink);opacity:.9;font-size:1.05rem;line-height:1.75}
 @media(max-width:700px){.hero{padding:48px 0 56px}.banner-photo .hi{position:static;display:block;width:max-content;max-width:calc(100% - 32px);margin:-14px auto 0;transform:rotate(-2deg);font-size:1.25rem}.banner{padding-bottom:20px;background:transparent}.banner-photo{overflow:visible}.banner-photo img{display:block}}
+.grid.shorts{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}.grid.shorts .card{padding:14px}.grid.shorts h3{font-size:1rem;text-align:center}
