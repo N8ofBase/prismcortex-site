@@ -295,7 +295,6 @@ songs = [
  ("3OhY0q5Mrtc","Savior Dreams","Music, lyrics and vocals by Nate Sloan. Performed and recorded by POSTCARD."),
  ("svt7yAM3WMc","The Mourning of Glory","Music, lyrics and vocals by Nate Sloan. Performed and recorded by POSTCARD."),
  ("WnqBvopaF5s","Snow","Inspired by Game of Thrones. Winter is coming."),
- ("JRUbnQxDSbw","N8's Blue Christmas",""),
 ]
 LOCAL_SONGS={"3OhY0q5Mrtc":"savior-dreams","svt7yAM3WMc":"mourning-of-glory","WnqBvopaF5s":"snow"}
 def _song(v,t,d):
@@ -466,7 +465,7 @@ f"""
 <div>
 <span class="eyebrow">The music</span>
 <h2>A guitar with my name on it</h2>
-<p>Music is where the brain lights up first. I write and record my own songs, from our anthem <strong>Choose Love</strong> to <em>My New Favorite Color</em> (with POSTCARD), <em>Savior Dreams</em>, <em>The Mourning of Glory</em>, <em>Snow</em> and <em>N8&rsquo;s Blue Christmas</em>.</p>
+<p>Music is where the brain lights up first. I write and record my own songs, from our anthem <strong>Choose Love</strong> to <em>My New Favorite Color</em> (with POSTCARD), <em>Savior Dreams</em>, <em>The Mourning of Glory</em> and <em>Snow</em>.</p>
 <p>Then there are the board game songs, which combine my two favorite things, music and gaming. If a game makes me smile, it&rsquo;s probably getting a song.</p>
 <div class="btns"><a class="btn primary" href="music.html">Listen on the Music Node</a><a class="btn" href="https://www.youtube.com/n8ofbase">YouTube</a></div>
 </div>
