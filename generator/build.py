@@ -275,7 +275,7 @@ f'''
 <h2>I Crit You Not!</h2>
 <p class="muted"><a href="{ICYN_PLAY}">icyn.prismcortex.net</a> · An 8-round duel of the mighty D20. Roll for speed and luck, read the scroll tables, land crits and dodge fumbles.</p>
 <ul class="ticks"><li>Duel the computer or pass and play with a friend</li><li>Boss mode against Starvos, with its own soundtrack</li><li>Online duels by join code, refereed by the server so nobody can predict a roll</li><li>Ranked results and stats when you sign in</li></ul>
-<div class="btns"><a class="btn primary" href="{ICYN_PLAY}">Play I Crit You Not!</a><a class="btn" href="{OLD}/uploads/b/d5d189d0-c0a1-11ee-95ea-8f865d85c14c/abf933e0-3191-11f0-b222-ef4a5eb2a275.pdf">Tabletop rulebook (PDF)</a></div>
+<div class="btns"><a class="btn primary" href="{ICYN_PLAY}">Play I Crit You Not!</a><a class="btn" href="{ICYN_PLAY}/?pass=open">Print &amp; Play edition (Crit Pass)</a></div>
 </div>
 <div>{yt("RUon07ukD30","Learn to play I Crit You Not! with Lettuce Talk Games")}</div>
 </div></section>
