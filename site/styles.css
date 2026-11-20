@@ -145,3 +145,16 @@ footer.site a{color:var(--muted)}
 .story{max-width:720px}.story p{color:var(--ink);opacity:.9;font-size:1.05rem;line-height:1.75}
 @media(max-width:700px){.hero{padding:48px 0 56px}.banner-photo .hi{position:static;display:block;width:max-content;max-width:calc(100% - 32px);margin:-14px auto 0;transform:rotate(-2deg);font-size:1.25rem}.banner{padding-bottom:20px;background:transparent}.banner-photo{overflow:visible}.banner-photo img{display:block}}
 .grid.shorts{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}.grid.shorts .card{padding:14px}.grid.shorts h3{font-size:1rem;text-align:center}
+/* Gifted Gifter */
+.gg-demo{background:#fffdf9;color:#2a2420;border-radius:var(--r);padding:20px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.gg-demo-head{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.gg-demo-head strong{display:block;font-size:1.1rem}.gg-demo-head span{color:#776c62;font-size:.9rem}
+.gg-demo ul{list-style:none;padding:0;margin:0}
+.gg-demo li{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:center;border-top:1px solid #e6dccd;padding:10px 0}
+.gg-demo li strong{display:block}.gg-demo li em{color:#776c62;font-style:normal;font-size:.85rem}
+.gg-demo .star{color:#e0b25a}
+.gg-demo .bought{font-size:.78rem;font-weight:600;background:#e3efe9;color:#1f4d3d;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.gg-demo p{margin:10px 0 0;color:#776c62;font-size:.88rem}
+ul.gg-ideas{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+ul.gg-ideas strong{display:block}ul.gg-ideas span{color:var(--muted);font-size:.93rem}
+.grid.gg4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}

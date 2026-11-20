@@ -1,7 +1,7 @@
 import pathlib
 OUT = pathlib.Path(__file__).resolve().parent.parent / "site"
 OLD = "https://www.prismcortex.net"
-NAV = [("index.html","Home"),("games.html","Game Node"),("pos.html","POS Node (Beta)"),("solutions.html","Web Node (Beta)"),("videos.html","Video Node"),("music.html","Music Node"),("behind-the-brain.html","Behind the Brain"),("contact.html","Contact")]
+NAV = [("index.html","Home"),("games.html","Game Node"),("pos.html","POS Node (Beta)"),("solutions.html","Web Node (Beta)"),("videos.html","Video Node"),("music.html","Music Node"),("gifted-gifter.html","Gifted Gifter"),("behind-the-brain.html","Behind the Brain"),("contact.html","Contact")]
 
 def yt(vid, title):
     return f'<iframe loading="lazy" style="aspect-ratio:16/9;width:100%;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/{vid}" title="{title}" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>'
@@ -63,7 +63,7 @@ def page(fname, title, desc, body, head=""):
 </main>
 <footer class="site"><div class="wrap">
 <div><strong>Prism Cortex Solutions</strong><br>Technology &amp; game solutions, built with love.<br>Designed by a human, built with AI. <a href="solutions.html#ai">How we work</a><br><a href="mailto:{EMAIL}">{EMAIL}</a><br>Choose Love.</div>
-<div>Explore<br><a href="games.html">Game Node</a> · <a href="pos.html">POS Node (Beta)</a> · <a href="solutions.html">Web Node</a> · <a href="videos.html">Video Node</a> · <a href="music.html">Music Node</a> · <a href="inspiration.html">Inspiration</a> · <a href="behind-the-brain.html">Behind the Brain</a></div>
+<div>Explore<br><a href="games.html">Game Node</a> · <a href="pos.html">POS Node (Beta)</a> · <a href="solutions.html">Web Node</a> · <a href="videos.html">Video Node</a> · <a href="music.html">Music Node</a> · <a href="gifted-gifter.html">Gifted Gifter</a> · <a href="inspiration.html">Inspiration</a> · <a href="behind-the-brain.html">Behind the Brain</a></div>
 <div>Friends<br><a href="https://beardedboardgames.com">beardedboardgames.com</a><br><a href="https://bbg.prismcortex.net">bbg.prismcortex.net</a></div>
 <div>Become a Prismatic Fanatic<br><a href="contact.html">Join the email list →</a><br>© 2026 Prism Cortex Solutions</div>
 </div></footer>
@@ -218,6 +218,7 @@ f"""
 <div class="grid">
  <div class="card"><span class="tag">Online Game</span><h3>I Crit You Not!</h3><p>A browser duel with computer, pass and play, boss and online modes.</p><a class="more" href="{ICYN_PLAY}">Play at icyn.prismcortex.net →</a></div>
  <div class="card"><span class="tag">Point of sale · Beta</span><h3>Bearded POS</h3><p>Register, inventory, customers and an online store for an independent board game shop. In beta.</p><a class="more" href="pos.html">See the POS →</a></div>
+ <div class="card"><span class="tag">Web app</span><h3>Gifted Gifter</h3><p>Family wish lists and secret gift draws, with live updates and accounts for kids.</p><a class="more" href="gifted-gifter.html">See Gifted Gifter →</a></div>
  <div class="card"><span class="tag">Website</span><h3>prismcortex.net</h3><p>This site, rebuilt from a Square Online store into a fast static site.</p></div>
 </div>
 </div></section>
@@ -514,6 +515,101 @@ page("404.html","Page not found | Prism Cortex Solutions","That page moved or ne
 """<section class="hero"><div class="wrap"><span class="eyebrow">404</span><h1>That node <span class="grad">isn&rsquo;t connected</span></h1>
 <p class="lead">The page you wanted moved when Prism Cortex became Prism Cortex Solutions. Try the home page, or meet N8 in Behind the Brain.</p>
 <div class="btns"><a class="btn primary" href="/">Go home</a><a class="btn" href="/behind-the-brain.html">Behind the Brain</a></div></div></section>""")
+
+# ---------------- GIFTED GIFTER ----------------
+GG_APP = "https://giftedgifter.prismcortex.net"
+GG_IDEAS = [
+ ("For the game night host", [
+   ("A quick-to-teach board game","Something that plays in under 30 minutes, like Fences or Locked Out from Bearded Board Games, so it actually hits the table."),
+   ("A set of metal or gemstone dice","A D20 set they&rsquo;ll show off at every roll. Note a color in the item&rsquo;s notes."),
+   ("Card sleeves and a deck box","Protects the games they already love. Add the card size so nobody guesses."),
+   ("Snack bowls with lids","Game night snacks that don&rsquo;t end up on the cards."),
+ ]),
+ ("For kids", [
+   ("A building set","Pick a theme they love and put the age range in the notes."),
+   ("A family card game","Mine &amp; Find is quick and easy for all ages, and grown-ups can join in."),
+   ("Art supplies","A sketchbook, markers or a paint kit, with their favorite colors listed."),
+   ("Books in a series they&rsquo;re reading","Add which book they&rsquo;re on so they get the next one, not a repeat."),
+ ]),
+ ("For grandparents", [
+   ("A digital photo frame","Family can load new photos from their phones all year."),
+   ("A large-print puzzle book or jigsaw puzzle","Note the size or piece count they like best."),
+   ("Cozy wool socks or a soft throw","Put the size and a color in the notes."),
+   ("A framed family photo","Mark it ★ most wanted if it&rsquo;s the one thing they asked for."),
+ ]),
+ ("Under $25", [
+   ("A good mug and a bag of local coffee","Name the roast they like in the notes."),
+   ("A pocket notebook and a nice pen","Simple, useful and easy to wrap."),
+   ("A small travel game","A card game that fits in a bag for trips and waiting rooms."),
+   ("A phone stand or charging cable","Add the phone model so it fits."),
+ ]),
+]
+gg_idea_cards="".join(f'<div class="card"><h3>{cat}</h3><ul class="gg-ideas">'+"".join(f'<li><strong>{n}</strong><span>{d}</span></li>' for n,d in items)+'</ul></div>' for cat,items in GG_IDEAS)
+page("gifted-gifter.html","Gifted Gifter | Wish lists & gift draws | Prism Cortex Solutions",
+"Gifted Gifter is a free wish list and secret gift draw app for families and friends, made by Prism Cortex Solutions. See how it works and browse gift ideas.",
+f'''
+<section class="hero"><div class="wrap feature">
+<div>
+<span class="eyebrow">Gifted Gifter · an app by Prism Cortex</span>
+<h1>Wish lists and gift draws <span class="grad">for the people you love</span></h1>
+<p class="lead">Gifted Gifter keeps the whole family&rsquo;s wish lists in one place, draws names for a gift exchange, and quietly makes sure nobody buys the same present twice.</p>
+<div class="btns"><a class="btn primary" href="{GG_APP}">Open Gifted Gifter</a><a class="btn" href="#ideas">Browse gift ideas</a></div>
+<p class="muted fine">The app is free and lives at <a href="{GG_APP}">giftedgifter.prismcortex.net</a>. You sign in there to see your groups and lists.</p>
+</div>
+<div class="gg-demo" aria-label="Example of a Gifted Gifter wish list">
+ <div class="gg-demo-head"><img src="img/gifted-gifter.svg" alt="Gifted Gifter logo" width="44" height="44"><div><strong>Grandma Rose&rsquo;s list</strong><span>Family group · 4 items</span></div></div>
+ <ul>
+  <li><span class="star">★</span><div><strong>Digital photo frame</strong><em>Most wanted · white if they have it</em></div><b class="bought">Bought by Jen</b></li>
+  <li><span></span><div><strong>Large-print crossword book</strong><em>Really want</em></div><b></b></li>
+  <li><span></span><div><strong>Wool socks, size M</strong><em>Nice · any color but orange</em></div><b class="bought">Bought by Sam</b></li>
+  <li><span></span><div><strong>Lavender hand cream</strong><em>Nice</em></div><b></b></li>
+ </ul>
+ <p>Rose never sees what&rsquo;s been bought. Everyone else does.</p>
+</div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<h2>How it works</h2>
+<div class="grid gg4">
+ <div class="card"><span class="tag">1</span><h3>Make your list</h3><p>Type an idea, paste a link from any store, or add a photo. Add a price, how much you want it, how many, and notes for size, color or model. You can also paste in a list from notes, email or another wish list site.</p></div>
+ <div class="card"><span class="tag">2</span><h3>Start a group</h3><p>Invite family or friends with a link or a 6-letter code. Your one list is shared with everyone in all your groups, so you only keep it up to date once.</p></div>
+ <div class="card"><span class="tag">3</span><h3>Draw names</h3><p>The organizer sets households so spouses and housemates never draw each other, adds any &ldquo;never pair&rdquo; rules, then draws. Each person sees only their own match, behind a tap-to-reveal blur.</p></div>
+ <div class="card"><span class="tag">4</span><h3>Mark it bought</h3><p>One tap tells everyone &ldquo;Bought by Jen&rdquo; so nobody doubles up. The person the list belongs to never sees it, so the surprise stays a surprise.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap feature">
+<div>
+<span class="eyebrow">Made for real families</span>
+<h2>Everyone can join, even without an email</h2>
+<ul class="ticks">
+ <li><strong>Managed accounts</strong> for kids and grandparents. A parent sets them up and sends a one-time sign-in link to their phone or tablet.</li>
+ <li><strong>Live updates.</strong> Lists, purchases and draws show up for everyone right away.</li>
+ <li><strong>Your Shopping page</strong> keeps everything you&rsquo;ve bought in one place, even if someone removes it from their list later.</li>
+ <li><strong>Private by design.</strong> Lists are only visible to people in your groups. There are no ads inside your lists.</li>
+</ul>
+<div class="btns"><a class="btn primary" href="{GG_APP}">Start a group</a></div>
+</div>
+<div class="shot">Give what they actually want</div>
+</div></section>
+
+<section class="alt" id="ideas"><div class="wrap">
+<span class="eyebrow">Gift ideas</span>
+<h2>Stuck on what to give?</h2>
+<p class="muted">A few ideas we love, sorted by who you&rsquo;re shopping for. The best gift is still the one on their list, so check Gifted Gifter first.</p>
+<div class="grid gg4">{gg_idea_cards}</div>
+<p class="muted fine">Tip: when you add an idea to your own list, put the size, color or model in the notes. It saves your family a lot of guessing.</p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Questions</h2>
+<details class="archive"><summary>Is Gifted Gifter free?</summary><p>Yes. Making lists, starting groups and drawing names are all free.</p></details>
+<details class="archive"><summary>Do I need an account?</summary><p>You sign in with your email to keep your list and groups private. Kids and grandparents can use a managed account set up by someone in the family, with no email of their own.</p></details>
+<details class="archive"><summary>Can I add things from any store?</summary><p>Yes. Paste a link from any online store, or just type an idea or add a photo of something you saw in person.</p></details>
+<details class="archive"><summary>Who makes Gifted Gifter?</summary><p>Gifted Gifter is made by Prism Cortex Solutions, a small technology and game studio in St. Louis. Questions or ideas? Email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p></details>
+<p class="muted fine">Some store links in Gifted Gifter may be affiliate links. As an Amazon Associate, Prism Cortex Solutions earns from qualifying purchases. It never changes the price you pay.</p>
+</div></section>
+''')
 
 # ---------------- CONTACT ----------------
 page("contact.html","Contact | Prism Cortex Solutions",
