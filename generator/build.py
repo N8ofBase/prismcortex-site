@@ -520,7 +520,7 @@ page("404.html","Page not found | Prism Cortex Solutions","That page moved or ne
 GG_APP = "https://giftedgifter.prismcortex.net"
 GG_IDEAS = [
  ("For the game night host", [
-   ("A quick-to-teach board game","Something that plays in under 30 minutes, like Fences or Locked Out from Bearded Board Games, so it actually hits the table."),
+   ("A quick-to-teach board game","Something that plays in under 30 minutes, like Fences or <a href=\"https://sovrn.co/44cge18\" rel=\"sponsored noopener\">Locked Out</a> from Bearded Board Games, so it actually hits the table."),
    ("A set of metal or gemstone dice","A D20 set they&rsquo;ll show off at every roll. Note a color in the item&rsquo;s notes."),
    ("Card sleeves and a deck box","Protects the games they already love. Add the card size so nobody guesses."),
    ("Snack bowls with lids","Game night snacks that don&rsquo;t end up on the cards."),
@@ -598,6 +598,7 @@ f'''
 <h2>Stuck on what to give?</h2>
 <p class="muted">A few ideas we love, sorted by who you&rsquo;re shopping for. The best gift is still the one on their list, so check Gifted Gifter first.</p>
 <div class="grid gg4">{gg_idea_cards}</div>
+<div class="btns" style="margin-top:20px"><a class="btn" href="https://sovrn.co/44cge18" rel="sponsored noopener">Shop Locked Out from Bearded Board Games →</a></div>
 <p class="muted fine">Tip: when you add an idea to your own list, put the size, color or model in the notes. It saves your family a lot of guessing.</p>
 </div></section>
 
@@ -607,7 +608,7 @@ f'''
 <details class="archive"><summary>Do I need an account?</summary><p>You sign in with your email to keep your list and groups private. Kids and grandparents can use a managed account set up by someone in the family, with no email of their own.</p></details>
 <details class="archive"><summary>Can I add things from any store?</summary><p>Yes. Paste a link from any online store, or just type an idea or add a photo of something you saw in person.</p></details>
 <details class="archive"><summary>Who makes Gifted Gifter?</summary><p>Gifted Gifter is made by Prism Cortex Solutions, a small technology and game studio in St. Louis. Questions or ideas? Email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p></details>
-<p class="muted fine">Some store links in Gifted Gifter may be affiliate links. As an Amazon Associate, Prism Cortex Solutions earns from qualifying purchases. It never changes the price you pay.</p>
+<p class="muted fine">Some links on this page and in Gifted Gifter are affiliate links. As an Amazon Associate, Prism Cortex Solutions earns from qualifying purchases. It never changes the price you pay.</p>
 </div></section>
 ''')
 
